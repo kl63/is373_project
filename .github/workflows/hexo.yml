@@ -14,37 +14,38 @@ jobs:
 
     steps:
       # Checkout the Hexo website repository
-      - name: Checkout Hexo repository
+      - name: Checkout Hexo Repository
         uses: actions/checkout@v3
 
-      # Install Node.js and Hexo CLI
-      - name: Install Node.js
+      # Install Node.js
+      - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '16'  # Specify your Node.js version
 
-      - name: Install Hexo and dependencies
+      # Install Hexo and its dependencies
+      - name: Install Hexo and Dependencies
         run: |
-          npm install hexo-cli -g
+          npm install -g hexo-cli
           npm install
 
       # Generate the static website
-      - name: Generate Hexo site
+      - name: Generate Hexo Site
         run: hexo generate
 
       # Clone the Playwright test repository
-      - name: Clone Playwright test repository
+      - name: Clone Playwright Test Repository
         run: |
           git clone https://github.com/sebastianlop23/is375_plr.git
           cd is375_plr/tests
           npm install
 
-      # Run the Playwright tests against the generated Hexo site
-      - name: Install Playwright browsers
-        run: |
-          npx playwright install  # This will download and install the required browsers
+      # Install required browsers for Playwright
+      - name: Install Playwright Browsers
+        run: npx playwright install  # This will download and install the required browsers
 
-      - name: Run Playwright tests
+      # Run Playwright tests
+      - name: Execute Playwright Tests
         run: |
           cd is375_plr/tests
           npx playwright test --config=../playwright.config.js  # Adjust to point to your config file
@@ -56,49 +57,29 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      # Checkout the Hexo repository again (to prevent loss of state)
-      - name: Checkout Hexo repository
+      # Checkout the Hexo repository again
+      - name: Checkout Hexo Repository
         uses: actions/checkout@v3
 
-      # Set up Node.js environment
-      - name: Install Node.js
+      # Set Up Node.js environment for deployment
+      - name: Set Up Node.js for Deployment
         uses: actions/setup-node@v3
         with:
-          node-version: '21'  # Make sure it matches your environment
+          node-version: '21'  # Ensure this matches your environment
 
-      # Install Hexo and dependencies
-      - name: Install Hexo and dependencies
+      # Install Hexo and dependencies for deployment
+      - name: Install Hexo and Dependencies for Deployment
         run: |
-          npm install hexo-cli -g
+          npm install -g hexo-cli
           npm install
 
-      # Re-generate the static website (if necessary)
-      - name: Generate Hexo site
+      # Re-generate the static website for deployment
+      - name: Regenerate Hexo Site
         run: hexo generate
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-
-        on:
-          push:
-            branches:
-              - master
-
-        jobs:
-          deploy:
-            runs-on: ubuntu-latest
-            steps:
-              - name: Checkout code
-                uses: actions/checkout@v2
-
-              - name: Build project
-                run: npm run build  # Adjust this based on your project's build process
-
-              - name: Deploy to GitHub Pages
-                uses: peaceiris/actions-gh-pages@v3
-                with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./public  # Make sure this matches your build output
-
-
-
-
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  # Ensure this matches your build output
