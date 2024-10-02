@@ -43,7 +43,7 @@ jobs:
       - name: Run Playwright tests
         run: |
           cd is375_plr/tests
-          npx playwright test --config=path-to-your-playwright-config
+          npx playwright test --config=../playwright.config.js
 
   deploy:
     runs-on: ubuntu-latest
