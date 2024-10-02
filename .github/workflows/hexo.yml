@@ -36,13 +36,13 @@ jobs:
       - name: Clone Playwright test repository
         run: |
           git clone https://github.com/sebastianlop23/is375_plr.git
-           cd is375_plr/tests
+          cd is375_plr/tests
           npm install
 
       # Run the Playwright tests against the generated Hexo site
       - name: Run Playwright tests
         run: |
-           cd is375_plr/tests
+          cd is375_plr/tests
           npx playwright test --config=path-to-your-playwright-config
 
   deploy:
