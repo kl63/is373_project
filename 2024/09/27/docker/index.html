@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Docker | Beginners Guide to Devops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Docker logo represents the platform’s emphasis on containerization and automation. The logo features a whale carrying containers, symbolizing Docker’s core functionality of managing and deploying">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://example.com/2024/09/27/docker/index.html">
+<meta property="og:site_name" content="Beginners Guide to Devops">
+<meta property="og:description" content="The Docker logo represents the platform’s emphasis on containerization and automation. The logo features a whale carrying containers, symbolizing Docker’s core functionality of managing and deploying">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/docker.png">
+<meta property="article:published_time" content="2024-09-27T20:20:04.541Z">
+<meta property="article:modified_time" content="2024-09-27T20:20:04.541Z">
+<meta property="article:author" content="Kevin Lin &amp; Sebastian Lopez">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/docker.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Beginners Guide to Devops" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Beginners Guide to Devops</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/09/27/docker/" class="article-date">
+  <time class="dt-published" datetime="2024-09-27T20:20:04.541Z" itemprop="datePublished">2024-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/docker.png" alt="Docker "></p>
+<p>The Docker logo represents the platform’s emphasis on containerization and automation. The logo features a whale carrying containers, symbolizing Docker’s core functionality of managing and deploying containers.</p>
+<ul>
+<li><p><strong>Definition</strong>: Docker is an open-source platform that automates the deployment, scaling, and management of applications through containerization. By packaging applications and their dependencies into isolated units called containers, Docker enables consistent operation across various computing environments, from local development machines to cloud-based production systems.</p>
+</li>
+<li><p><strong>Key Features</strong>:</p>
+<ul>
+<li><p><strong>Isolation</strong>: Docker containers provide a lightweight form of virtualization by isolating applications and their dependencies in separate environments. This isolation prevents conflicts between applications and ensures that they run independently without affecting one another. Each container encapsulates everything needed to run an application, including the code, runtime, libraries, and environment variables.</p>
+</li>
+<li><p><strong>Consistency</strong>: Containers are designed to operate consistently across different environments. Whether running on a developer’s laptop, a test server, or a production environment, Docker ensures that the application behaves the same way. This consistency reduces issues related to “it works on my machine” and streamlines the development and deployment process.</p>
+</li>
+<li><p><strong>Efficiency</strong>: Unlike traditional virtual machines (VMs), Docker containers share the host system’s operating system kernel. This shared resource model makes containers more lightweight and faster to start compared to VMs, which require their own full operating system. Containers use less memory and disk space, making them a more resource-efficient option for running multiple applications on a single host.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Components</strong>:</p>
+<ul>
+<li><p><strong>Docker Engine</strong>: The core component of Docker that handles container creation, execution, and management. It consists of a server, a REST API, and a command-line interface (CLI) for interacting with the Docker daemon.</p>
+</li>
+<li><p><strong>Docker Images</strong>: Immutable snapshots of a file system that include everything needed to run an application, such as the code, runtime, libraries, and environment variables. Docker images are used to create containers and can be shared through Docker Hub or other container registries.</p>
+</li>
+<li><p><strong>Docker Containers</strong>: Running instances of Docker images. Containers are lightweight, portable, and can be started or stopped quickly. They encapsulate an application and its dependencies in a standardized environment.</p>
+</li>
+<li><p><strong>Dockerfile</strong>: A text file containing a set of instructions for building Docker images. It specifies the base image, application code, dependencies, and configuration steps required to create a custom image.</p>
+</li>
+<li><p><strong>Docker Compose</strong>: A tool that simplifies the management of multi-container applications. It allows developers to define and manage multi-container setups using a YAML configuration file, making it easier to handle complex applications with interconnected services.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Benefits</strong>:</p>
+<ul>
+<li><p><strong>Portability</strong>: Docker containers can run on any system that supports Docker, regardless of the underlying infrastructure. This portability facilitates the movement of applications between different environments and clouds.</p>
+</li>
+<li><p><strong>Scalability</strong>: Docker enables scalable applications by allowing developers to deploy multiple instances of containers across clusters. This horizontal scaling improves performance and reliability.</p>
+</li>
+<li><p><strong>Version Control</strong>: Docker images can be versioned and stored in container registries, making it easy to track changes, roll back to previous versions, and maintain consistent deployments.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Use Cases</strong>:</p>
+<ul>
+<li><p><strong>Development and Testing</strong>: Docker simplifies the setup of development and testing environments by providing consistent and reproducible environments across different stages of the software lifecycle.</p>
+</li>
+<li><p><strong>Continuous Integration&#x2F;Continuous Deployment (CI&#x2F;CD)</strong>: Docker integrates seamlessly with CI&#x2F;CD pipelines, automating the process of building, testing, and deploying applications. This integration streamlines the delivery process and enhances deployment reliability.</p>
+</li>
+<li><p><strong>Microservices Architecture</strong>: Docker supports microservices by allowing developers to deploy and manage multiple interdependent services in separate containers. This architecture improves modularity and scalability of applications.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Ecosystem</strong>:</p>
+<ul>
+<li><p><strong>Docker Hub</strong>: A cloud-based repository that hosts Docker images. Docker Hub provides a central location for storing and sharing container images, making it easier to access pre-built images and collaborate with others.</p>
+</li>
+<li><p><strong>Kubernetes</strong>: An open-source container orchestration platform that works with Docker to manage and scale containerized applications. Kubernetes automates deployment, scaling, and operations of application containers across clusters of hosts.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Docker’s innovative approach to containerization has revolutionized the way applications are developed, deployed, and managed, offering a powerful toolset for modern software development and operations.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/09/27/docker/" data-id="cm1uyyxha00022yqndilb75rw" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/09/27/containerization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Containerization
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/09/27/kernel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Kernel Operating Systems</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/09/27/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/27/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/27/12-factor/">Twelve Factor App</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/27/containerization/">Containerization</a>
+          </li>
+        
+          <li>
+            <a href="/2024/09/27/docker/">Docker</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Kevin Lin &amp; Sebastian Lopez<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
