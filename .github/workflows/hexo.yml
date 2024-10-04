@@ -21,7 +21,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Specify your Node.js version
+          node-version: '21'  # Specify your Node.js version
 
       # Install Hexo and its dependencies
       - name: Install Hexo and Dependencies
@@ -82,7 +82,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # Ensure this matches your GitHub Pages branch
           publish_dir: ./public  # Ensure this matches your build output
-
-
-          
