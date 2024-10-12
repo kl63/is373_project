@@ -33,6 +33,25 @@ jobs:
       - name: Generate Hexo Site
         run: hexo generate
 
+      # Start Hexo server persistently
+      - name: Start Hexo Server
+        run: |
+          nohup hexo server -p 4000 > hexo_server.log 2>&1 &
+          sleep 10  # Allow time for the server to start
+
+      # Check if Hexo server is running
+      - name: Check if Hexo Server is Running
+        run: |
+          for i in {1..10}; do
+            if curl -s --head http://localhost:4000/ | grep "200 OK"; then
+              echo "Hexo server is running."
+              break
+            else
+              echo "Waiting for Hexo server to be ready..."
+              sleep 3
+            fi
+          done
+
       # Clone the Playwright test repository
       - name: Clone Playwright Test Repository
         run: |
@@ -51,6 +70,11 @@ jobs:
         run: |
           cd is375_plr/tests
           npx playwright test --config=../playwright.config.js  # Ensure path is correct for your setup
+
+      # Display Hexo server log for debugging
+      - name: Display Hexo Server Log (for Debugging)
+        if: failure()  # Show logs only if the test fails
+        run: cat hexo_server.log
 
   deploy:
     runs-on: ubuntu-latest
@@ -74,7 +98,7 @@ jobs:
           npm install -g hexo-cli
           npm install
 
-      # Re-generate the static website for deployment
+      # Regenerate the static website for deployment
       - name: Regenerate Hexo Site
         run: hexo generate
 
