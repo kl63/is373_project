@@ -78,7 +78,7 @@ jobs:
 
       # Add .nojekyll file to disable Jekyll processing
       - name: Disable Jekyll
-        run: echo > ./public/.nojekyll  # Ensure this file exists in the public directory
+        run: touch ./public/.nojekyll
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
