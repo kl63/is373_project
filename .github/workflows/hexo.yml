@@ -12,16 +12,20 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_VERSION: '21'
+      HEXO_PORT: 4000  # Hexo server port
+
     steps:
-      # Checkout the Hexo website repository
+      # Checkout the Hexo repository
       - name: Checkout Hexo Repository
         uses: actions/checkout@v3
 
-      # Install Node.js
+      # Set up Node.js and install Hexo dependencies
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'  # Use Node.js version 21
+          node-version: ${{ env.NODE_VERSION }}
 
       # Install Hexo and its dependencies
       - name: Install Hexo and Dependencies
@@ -29,7 +33,7 @@ jobs:
           npm install -g hexo-cli
           npm install
 
-      # Generate the static website
+      # Generate the Hexo site
       - name: Generate Hexo Site
         run: hexo generate
 
@@ -42,15 +46,28 @@ jobs:
 
       # Install required browsers for Playwright
       - name: Install Playwright Browsers
-        run: |
-          cd is375_plr
-          npx playwright install  # Install required browsers
+        run: npx playwright install
 
       # Run Playwright tests
       - name: Execute Playwright Tests
         run: |
           cd is375_plr/tests
-          npx playwright test --config=../playwright.config.js  # Ensure path is correct for your setup
+          npx playwright test --config=../playwright.config.js  # Adjust to point to your config file
+
+      # Start the Hexo server persistently for testing
+      - name: Start Hexo Server
+        run: |
+          nohup hexo server -p ${{ env.HEXO_PORT }} > hexo_server.log 2>&1 &
+          sleep 5  # Give the server some time to start
+
+      # Check if the Hexo server is running
+      - name: Check Hexo Server
+        run: |
+          for i in {1..10}; do
+            curl -I http://localhost:${{ env.HEXO_PORT }}/ && break
+            echo "Waiting for Hexo server to be ready..."
+            sleep 3
+          done
 
   deploy:
     runs-on: ubuntu-latest
@@ -58,7 +75,7 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      # Checkout the Hexo repository again for deployment
+      # Checkout the Hexo repository again
       - name: Checkout Hexo Repository
         uses: actions/checkout@v3
 
@@ -66,7 +83,7 @@ jobs:
       - name: Set Up Node.js for Deployment
         uses: actions/setup-node@v3
         with:
-          node-version: '21'  # Ensure this matches your environment
+          node-version: '21'  # Ensure consistency with the build environment
 
       # Install Hexo and dependencies for deployment
       - name: Install Hexo and Dependencies for Deployment
