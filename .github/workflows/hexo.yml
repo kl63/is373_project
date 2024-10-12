@@ -42,13 +42,15 @@ jobs:
 
       # Install required browsers for Playwright
       - name: Install Playwright Browsers
-        run: npx playwright install  # This will download and install the required browsers
+        run: |
+          cd is375_plr
+          npx playwright install  # Install required browsers
 
       # Run Playwright tests
       - name: Execute Playwright Tests
         run: |
           cd is375_plr/tests
-          npx playwright test --config=../playwright.config.js  # Adjust to point to your config file
+          npx playwright test --config=../playwright.config.js  # Ensure path is correct for your setup
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,7 +58,7 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      # Checkout the Hexo repository again
+      # Checkout the Hexo repository again for deployment
       - name: Checkout Hexo Repository
         uses: actions/checkout@v3
 
