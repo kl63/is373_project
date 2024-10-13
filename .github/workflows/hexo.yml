@@ -3,10 +3,10 @@ name: Test and Deploy Hexo Site
 on:
   push:
     branches:
-      - master  # Trigger on push to the master branch
+      - master  # Use 'master' if that's your default branch
   pull_request:
     branches:
-      - master  # Trigger on pull request to the master branch
+      - master
 
 jobs:
   build-and-test:
@@ -19,13 +19,16 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21'  # Use the desired Node.js version
+          node-version: '18'  # Specify the Node.js version you want to use
 
       - name: Install Hexo and Dependencies
         run: |
           npm install -g hexo-cli
           npm install
-          npx playwright install  # Ensure Playwright is installed
+          npx playwright install
+
+      - name: Show Hexo Configuration
+        run: cat _config.yml  # Log the Hexo configuration
 
       - name: Generate Hexo Site
         run: hexo generate
@@ -33,7 +36,7 @@ jobs:
       - name: Start Hexo Server
         run: |
           nohup hexo server -p 4000 > hexo_server.log 2>&1 &
-          sleep 5  # Give the server time to start
+          sleep 5
 
       - name: Check if Hexo server is running
         run: |
@@ -44,10 +47,10 @@ jobs:
 
       - name: Run Playwright Tests
         run: |
-          npx playwright test --config=./playwright.config.js  # Run Playwright tests
+          npx playwright test --config=./playwright.config.js
 
       - name: Display Hexo server log (for debugging)
-        if: failure()  # Show logs only if the test fails
+        if: failure()
         run: cat hexo_server.log
 
   deploy:
@@ -62,7 +65,7 @@ jobs:
       - name: Set Up Node.js for Deployment
         uses: actions/setup-node@v3
         with:
-          node-version: '21'  # Use the desired Node.js version
+          node-version: '18'  # Specify the Node.js version you want to use
 
       - name: Install Hexo and Dependencies for Deployment
         run: |
@@ -80,4 +83,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages  # Ensure this is correct
+          publish_branch: gh-pages
