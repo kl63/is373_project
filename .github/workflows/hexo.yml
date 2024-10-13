@@ -48,7 +48,9 @@ jobs:
 
       # Install required browsers for Playwright
       - name: Install Playwright Browsers
-        run: npx playwright install  # This will download and install the required browsers
+        run: |
+          cd is375_plr/tests
+          npx playwright install  # This will download and install the required browsers
 
       # Run Playwright tests
       - name: Execute Playwright Tests
