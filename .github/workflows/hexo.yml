@@ -1,3 +1,4 @@
+
 name: Test and Deploy Hexo Site
 
 on:
@@ -72,19 +73,9 @@ jobs:
           npm install -g hexo-cli
           npm install
 
-      # Install Hexo theme if missing for deployment
-      - name: Install Hexo Theme if Missing for Deployment
-        run: |
-          git clone https://github.com/hexojs/hexo-theme-landscape themes/landscape
-          export THEME_DIR=themes/landscape
-
       # Re-generate the static website for deployment
       - name: Regenerate Hexo Site
         run: hexo generate
-
-      # List Public Directory to verify files are generated
-      - name: List Public Directory
-        run: ls -la ./public  # Ensure this file exists in the public directory
 
       # Add .nojekyll file to disable Jekyll processing
       - name: Disable Jekyll
@@ -96,4 +87,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public  # Ensure this matches your build output directory
-
