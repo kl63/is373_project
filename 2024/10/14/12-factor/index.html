@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   
   
-  <title>Threading | Beginners Guide to Devops</title>
+  <title>Twelve Factor App | Beginners Guide to Devops</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Threading allows a single process to perform multiple tasks simultaneously using separate threads.  Benefits:  Improved Performance: By running multiple threads in parallel, applications can complete">
+  <meta name="description" content="The Twelve-Factor App methodology defines best practices for building scalable and maintainable SaaS applications:  Codebase: One codebase tracked in revision control, many deploys.   Dependencies: E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Threading">
-<meta property="og:url" content="https://kl63.github.io/is373_project/2024/10/13/threading/index.html">
+<meta property="og:title" content="Twelve Factor App">
+<meta property="og:url" content="https://kl63.github.io/is373_project/2024/10/14/12-factor/index.html">
 <meta property="og:site_name" content="Beginners Guide to Devops">
-<meta property="og:description" content="Threading allows a single process to perform multiple tasks simultaneously using separate threads.  Benefits:  Improved Performance: By running multiple threads in parallel, applications can complete">
+<meta property="og:description" content="The Twelve-Factor App methodology defines best practices for building scalable and maintainable SaaS applications:  Codebase: One codebase tracked in revision control, many deploys.   Dependencies: E">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-13T01:44:30.381Z">
-<meta property="article:modified_time" content="2024-10-13T01:44:30.381Z">
+<meta property="og:image" content="https://kl63.github.io/is373_project/images/12-factor.png">
+<meta property="article:published_time" content="2024-10-14T16:34:34.345Z">
+<meta property="article:modified_time" content="2024-10-14T16:34:34.345Z">
 <meta property="article:author" content="Kevin Lin &amp; Sebastian Lopez">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kl63.github.io/is373_project/images/12-factor.png">
   
     <link rel="alternate" href="/is373_project/atom.xml" title="Beginners Guide to Devops" type="application/atom+xml">
   
@@ -73,10 +75,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-12-factor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/threading/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/12-factor/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -87,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Threading
+      Twelve Factor App
     </h1>
   
 
@@ -95,26 +97,28 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><strong>Threading</strong> allows a single process to perform multiple tasks simultaneously using separate threads.</p>
-<ul>
-<li><p><strong>Benefits</strong>:</p>
-<ul>
-<li><strong>Improved Performance</strong>: By running multiple threads in parallel, applications can complete tasks more quickly, making better use of available CPU resources.</li>
-<li><strong>Responsiveness</strong>: Threads can handle multiple operations at once, improving the responsiveness of applications, especially in interactive or real-time systems.</li>
-</ul>
-</li>
-<li><p><strong>How It Works</strong>:</p>
-<ul>
-<li><strong>Shared Memory</strong>: Threads within the same process share the same memory space, allowing them to access and modify shared data. This facilitates communication between threads but also requires careful management.</li>
-<li><strong>Thread Management</strong>: Proper management is needed to avoid conflicts such as race conditions (where threads access shared data simultaneously) and deadlocks (where threads wait indefinitely for resources held by each other). Techniques like synchronization mechanisms (e.g., mutexes, semaphores) are used to manage access to shared resources and ensure thread safety.</li>
-</ul>
-</li>
-</ul>
+        <p><img src="/is373_project/images/12-factor.png" alt="Twelve-Factor App"></p>
+<p>The Twelve-Factor App methodology defines best practices for building scalable and maintainable SaaS applications:</p>
+<ol>
+<li><strong>Codebase</strong>: One codebase tracked in revision control, many deploys.  </li>
+<li><strong>Dependencies</strong>: Explicitly declare and isolate dependencies.  </li>
+<li><strong>Config</strong>: Store config in the environment.  </li>
+<li><strong>Backing services</strong>: Treat backing services as attached resources.  </li>
+<li><strong>Build, release, run</strong>: Separate build and run stages.  </li>
+<li><strong>Processes</strong>: Execute the app as one or more stateless processes.  </li>
+<li><strong>Port binding</strong>: Export services via port binding.  </li>
+<li><strong>Concurrency</strong>: Scale out via the process model.  </li>
+<li><strong>Disposability</strong>: Maximize robustness with fast startup and graceful shutdown.  </li>
+<li><strong>Dev&#x2F;prod parity</strong>: Keep development, staging, and production environments similar.  </li>
+<li><strong>Logs</strong>: Treat logs as event streams.  </li>
+<li><strong>Admin processes</strong>: Run admin tasks as one-off processes.</li>
+</ol>
+<p>Learn more at <a target="_blank" rel="noopener" href="https://12factor.net/">here</a>.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/threading/" data-id="cm26xac9b0006kjq49qyghdhh" data-title="Threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/12-factor/" data-id="cm298itu70000mpq85cvq2tji" data-title="Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -124,19 +128,19 @@
     
 <nav id="article-nav">
   
-    <a href="/is373_project/2024/10/13/scaling/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/is373_project/2024/10/14/virtualizationvscontainerization/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Scaling: Horizontal vs. Vertical
+          Virtualization vs Containerization: Pros and Cons
         
       </div>
     </a>
   
   
-    <a href="/is373_project/2024/10/13/ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/is373_project/2024/10/14/containerization/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Install Ubuntu on a Mac: A Quick Guide</div>
+      <div class="article-nav-title">Containerization</div>
     </a>
   
 </nav>
@@ -174,23 +178,23 @@
       <ul>
         
           <li>
-            <a href="/is373_project/2024/10/13/12-factor/">Twelve Factor App</a>
+            <a href="/is373_project/2024/10/14/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/containerization/">Containerization</a>
+            <a href="/is373_project/2024/10/14/12-factor/">Twelve Factor App</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/docker/">Docker</a>
+            <a href="/is373_project/2024/10/14/containerization/">Containerization</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
+            <a href="/is373_project/2024/10/14/docker/">Docker</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/kernel/">Kernel Operating Systems</a>
+            <a href="/is373_project/2024/10/14/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
           </li>
         
       </ul>

@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-12-factor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-virtualizationvscontainerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/12-factor/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/virtualizationvscontainerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.346Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -85,7 +85,73 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/12-factor/">Twelve Factor App</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/is373_project/images/virtualvscontainer.webp" alt="Diagram"></p>
+<p><strong>Virtualization</strong> and <strong>Containerization</strong> are both technologies used to run isolated applications on a single system. However, they differ in how they achieve isolation and resource utilization. Understanding the benefits and drawbacks of each can help determine the best approach for your infrastructure needs.</p>
+<h2 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h2><p><strong>Virtualization</strong> involves creating virtual machines (VMs), where each VM runs its own operating system on top of a hypervisor. A hypervisor is the software that enables multiple VMs to share the same physical hardware. Each VM includes a full copy of an operating system (OS), applications, and necessary libraries.</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Full Isolation</strong>: VMs provide complete isolation between environments. Each VM has its own OS, making them secure and preventing one VM from affecting others.</li>
+<li><strong>Flexibility</strong>: VMs can run different operating systems on the same physical hardware. This allows running Linux, Windows, and other OSes simultaneously.</li>
+<li><strong>Resource Management</strong>: Hypervisors allow for the allocation of specific resources (CPU, memory, storage) to each VM, ensuring control over how much each VM consumes.</li>
+<li><strong>Mature Technology</strong>: Virtualization has been around for decades and has well-established tools, best practices, and enterprise-grade support (e.g., VMware, Hyper-V).</li>
+</ul>
+<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Heavy Resource Usage</strong>: Each VM includes a full OS, which takes up significant CPU, memory, and storage resources. This can lead to overhead, especially when running multiple VMs.</li>
+<li><strong>Slower Performance</strong>: Due to the additional layer of the OS and hypervisor, VMs tend to be slower compared to containerized applications.</li>
+<li><strong>Longer Boot Times</strong>: Since VMs run a complete OS, they take longer to boot and initialize compared to containers, which are more lightweight.</li>
+</ul>
+<h2 id="Containerization"><a href="#Containerization" class="headerlink" title="Containerization"></a>Containerization</h2><p><strong>Containerization</strong> involves packaging applications and their dependencies into containers, which share the host system’s kernel but run in isolated user spaces. Containers are managed using container engines such as <strong>Docker</strong> or orchestration tools like <strong>Kubernetes</strong>.</p>
+<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Lightweight</strong>: Containers share the host OS kernel, meaning they do not need to run a full OS. This makes them much more efficient in terms of resource usage (CPU, memory, and storage).</li>
+<li><strong>Faster Startup</strong>: Containers can start up in seconds because they don’t need to boot an entire OS, which accelerates development and testing processes.</li>
+<li><strong>Portability</strong>: Containers can run on any system that supports the container engine (e.g., Docker), regardless of the underlying infrastructure, ensuring consistency across environments (development, staging, production).</li>
+<li><strong>Scalability</strong>: Containerization, especially when combined with orchestration platforms like Kubernetes, makes it easy to scale applications dynamically to meet demand.</li>
+</ul>
+<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Shared Kernel</strong>: Containers share the host OS kernel, meaning that any vulnerability in the kernel can potentially affect all containers running on the host, making them less isolated compared to VMs.</li>
+<li><strong>Limited OS Diversity</strong>: Since containers share the host kernel, you cannot run a container with a different OS (e.g., you can’t run a Windows container on a Linux host without specific configurations).</li>
+<li><strong>Less Mature</strong>: While containerization is gaining widespread adoption, it’s a newer technology compared to virtualization, and some legacy applications may not be easily containerized.</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In summary, <strong>Virtualization</strong> offers strong isolation and the flexibility to run multiple OSes but comes with higher resource overhead and slower performance. It’s ideal for situations where you need complete OS-level isolation and security, or when running applications that aren’t designed to be containerized.</p>
+<p>On the other hand, <strong>Containerization</strong> provides a more efficient, faster, and portable solution, making it excellent for microservices, development environments, and cloud-native applications. However, it sacrifices some of the isolation and flexibility that VMs provide. The best choice depends on your project’s needs, resource constraints, and operational goals.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/virtualizationvscontainerization/" data-id="cm298itug0008mpq87dms1gjw" data-title="Virtualization vs Containerization: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-12-factor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/14/12-factor/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/14/12-factor/">Twelve Factor App</a>
     </h1>
   
 
@@ -114,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/12-factor/" data-id="cm26xac930000kjq47xv5g345" data-title="Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/12-factor/" data-id="cm298itu70000mpq85cvq2tji" data-title="Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -128,8 +194,8 @@
   
     <article id="post-containerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/containerization/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/containerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -140,7 +206,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/containerization/">Containerization</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/containerization/">Containerization</a>
     </h1>
   
 
@@ -172,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/containerization/" data-id="cm26xac970001kjq4a4fuacqr" data-title="Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/containerization/" data-id="cm298itub0001mpq8cagv7jvv" data-title="Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -186,8 +252,8 @@
   
     <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/docker/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/docker/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -198,7 +264,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/docker/">Docker</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/docker/">Docker</a>
     </h1>
   
 
@@ -269,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/docker/" data-id="cm26xac980002kjq43bal92tb" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/docker/" data-id="cm298ituc0002mpq83zama6c6" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -283,8 +349,8 @@
   
     <article id="post-dockervskubernetes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/dockervskubernetes/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/dockervskubernetes/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -295,7 +361,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
     </h1>
   
 
@@ -334,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/dockervskubernetes/" data-id="cm26xac990003kjq4c0m0eovm" data-title="Docker vs Kubernetes: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/dockervskubernetes/" data-id="cm298itud0003mpq82vsr9waz" data-title="Docker vs Kubernetes: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -348,8 +414,8 @@
   
     <article id="post-kernel" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/kernel/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/kernel/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -360,7 +426,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/kernel/">Kernel Operating Systems</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/kernel/">Kernel Operating Systems</a>
     </h1>
   
 
@@ -398,7 +464,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/kernel/" data-id="cm26xac9a0004kjq455rl2xzr" data-title="Kernel Operating Systems" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/kernel/" data-id="cm298itud0004mpq8131h8ag9" data-title="Kernel Operating Systems" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -412,8 +478,8 @@
   
     <article id="post-scaling" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/scaling/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/scaling/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -424,7 +490,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/scaling/">Scaling: Horizontal vs. Vertical</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/scaling/">Scaling: Horizontal vs. Vertical</a>
     </h1>
   
 
@@ -457,7 +523,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/scaling/" data-id="cm26xac9a0005kjq420gk9nv3" data-title="Scaling: Horizontal vs. Vertical" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/scaling/" data-id="cm298itue0005mpq8cleb5g53" data-title="Scaling: Horizontal vs. Vertical" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -471,8 +537,8 @@
   
     <article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/threading/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/threading/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -483,7 +549,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/threading/">Threading</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/threading/">Threading</a>
     </h1>
   
 
@@ -510,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/threading/" data-id="cm26xac9b0006kjq49qyghdhh" data-title="Threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/threading/" data-id="cm298ituf0006mpq8g4do31ak" data-title="Threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -524,8 +590,8 @@
   
     <article id="post-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/13/ubuntu/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
+    <a href="/is373_project/2024/10/14/ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2024-10-14T16:34:34.345Z" itemprop="datePublished">2024-10-14</time>
 </a>
     
   </div>
@@ -536,7 +602,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/14/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
     </h1>
   
 
@@ -582,73 +648,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/ubuntu/" data-id="cm26xac9c0007kjq423wm4t04" data-title="Install Ubuntu on a Mac: A Quick Guide" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-virtualizationvscontainerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/13/virtualizationvscontainerization/" class="article-date">
-  <time class="dt-published" datetime="2024-10-13T01:44:30.381Z" itemprop="datePublished">2024-10-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/13/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/is373_project/images/virtualvscontainer.webp" alt="Diagram"></p>
-<p><strong>Virtualization</strong> and <strong>Containerization</strong> are both technologies used to run isolated applications on a single system. However, they differ in how they achieve isolation and resource utilization. Understanding the benefits and drawbacks of each can help determine the best approach for your infrastructure needs.</p>
-<h2 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h2><p><strong>Virtualization</strong> involves creating virtual machines (VMs), where each VM runs its own operating system on top of a hypervisor. A hypervisor is the software that enables multiple VMs to share the same physical hardware. Each VM includes a full copy of an operating system (OS), applications, and necessary libraries.</p>
-<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Full Isolation</strong>: VMs provide complete isolation between environments. Each VM has its own OS, making them secure and preventing one VM from affecting others.</li>
-<li><strong>Flexibility</strong>: VMs can run different operating systems on the same physical hardware. This allows running Linux, Windows, and other OSes simultaneously.</li>
-<li><strong>Resource Management</strong>: Hypervisors allow for the allocation of specific resources (CPU, memory, storage) to each VM, ensuring control over how much each VM consumes.</li>
-<li><strong>Mature Technology</strong>: Virtualization has been around for decades and has well-established tools, best practices, and enterprise-grade support (e.g., VMware, Hyper-V).</li>
-</ul>
-<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Heavy Resource Usage</strong>: Each VM includes a full OS, which takes up significant CPU, memory, and storage resources. This can lead to overhead, especially when running multiple VMs.</li>
-<li><strong>Slower Performance</strong>: Due to the additional layer of the OS and hypervisor, VMs tend to be slower compared to containerized applications.</li>
-<li><strong>Longer Boot Times</strong>: Since VMs run a complete OS, they take longer to boot and initialize compared to containers, which are more lightweight.</li>
-</ul>
-<h2 id="Containerization"><a href="#Containerization" class="headerlink" title="Containerization"></a>Containerization</h2><p><strong>Containerization</strong> involves packaging applications and their dependencies into containers, which share the host system’s kernel but run in isolated user spaces. Containers are managed using container engines such as <strong>Docker</strong> or orchestration tools like <strong>Kubernetes</strong>.</p>
-<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Lightweight</strong>: Containers share the host OS kernel, meaning they do not need to run a full OS. This makes them much more efficient in terms of resource usage (CPU, memory, and storage).</li>
-<li><strong>Faster Startup</strong>: Containers can start up in seconds because they don’t need to boot an entire OS, which accelerates development and testing processes.</li>
-<li><strong>Portability</strong>: Containers can run on any system that supports the container engine (e.g., Docker), regardless of the underlying infrastructure, ensuring consistency across environments (development, staging, production).</li>
-<li><strong>Scalability</strong>: Containerization, especially when combined with orchestration platforms like Kubernetes, makes it easy to scale applications dynamically to meet demand.</li>
-</ul>
-<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Shared Kernel</strong>: Containers share the host OS kernel, meaning that any vulnerability in the kernel can potentially affect all containers running on the host, making them less isolated compared to VMs.</li>
-<li><strong>Limited OS Diversity</strong>: Since containers share the host kernel, you cannot run a container with a different OS (e.g., you can’t run a Windows container on a Linux host without specific configurations).</li>
-<li><strong>Less Mature</strong>: While containerization is gaining widespread adoption, it’s a newer technology compared to virtualization, and some legacy applications may not be easily containerized.</li>
-</ul>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In summary, <strong>Virtualization</strong> offers strong isolation and the flexibility to run multiple OSes but comes with higher resource overhead and slower performance. It’s ideal for situations where you need complete OS-level isolation and security, or when running applications that aren’t designed to be containerized.</p>
-<p>On the other hand, <strong>Containerization</strong> provides a more efficient, faster, and portable solution, making it excellent for microservices, development environments, and cloud-native applications. However, it sacrifices some of the isolation and flexibility that VMs provide. The best choice depends on your project’s needs, resource constraints, and operational goals.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/13/virtualizationvscontainerization/" data-id="cm26xac9c0008kjq47olf3gfx" data-title="Virtualization vs Containerization: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/14/ubuntu/" data-id="cm298ituf0007mpq83dsd1npn" data-title="Install Ubuntu on a Mac: A Quick Guide" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -691,23 +691,23 @@
       <ul>
         
           <li>
-            <a href="/is373_project/2024/10/13/12-factor/">Twelve Factor App</a>
+            <a href="/is373_project/2024/10/14/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/containerization/">Containerization</a>
+            <a href="/is373_project/2024/10/14/12-factor/">Twelve Factor App</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/docker/">Docker</a>
+            <a href="/is373_project/2024/10/14/containerization/">Containerization</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
+            <a href="/is373_project/2024/10/14/docker/">Docker</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/13/kernel/">Kernel Operating Systems</a>
+            <a href="/is373_project/2024/10/14/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
           </li>
         
       </ul>
