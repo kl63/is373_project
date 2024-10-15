@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-12-factor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-kernel" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/14/12-factor/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
+    <a href="/is373_project/2024/10/15/kernel/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.827Z" itemprop="datePublished">2024-10-15</time>
 </a>
     
   </div>
@@ -85,7 +85,321 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/12-factor/">Twelve Factor App</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/15/kernel/">Kernel Operating Systems</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/is373_project/images/Kernel_Layout.svg.png" alt="Kernel OS Diagram"></p>
+<h2 id="Kernel-Layer"><a href="#Kernel-Layer" class="headerlink" title="Kernel Layer"></a>Kernel Layer</h2><ul>
+<li><strong>Definition</strong>: The kernel is the core component of an operating system (OS). It manages the system’s hardware resources and enables software applications to interact with hardware components.</li>
+<li><strong>Key Functions</strong>:<ul>
+<li><strong>Resource Management</strong>: Allocates CPU time, memory space, and I&#x2F;O resources to various processes and applications.</li>
+<li><strong>Process Management</strong>: Handles the creation, scheduling, and termination of processes. It ensures that processes run efficiently and without interference.</li>
+<li><strong>Memory Management</strong>: Manages the system’s memory, including RAM and virtual memory, to ensure that processes have the necessary memory resources and to optimize performance.</li>
+<li><strong>Device Management</strong>: Acts as an intermediary between applications and hardware devices such as printers, disk drives, and network interfaces.</li>
+<li><strong>System Calls</strong>: Provides an interface for applications to request services from the kernel, such as file operations or process control.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Application-Layer"><a href="#Application-Layer" class="headerlink" title="Application Layer"></a>Application Layer</h2><ul>
+<li><strong>Definition</strong>: The application layer consists of the software applications that users interact with. These applications rely on the kernel to perform low-level tasks and manage hardware resources.</li>
+<li><strong>Key Functions</strong>:<ul>
+<li><strong>User Interaction</strong>: Provides the interface through which users interact with the computer, including graphical user interfaces (GUIs) and command-line interfaces.</li>
+<li><strong>Application Execution</strong>: Runs user-facing programs, such as web browsers, word processors, and games, which utilize the services provided by the kernel.</li>
+<li><strong>Communication</strong>: Interfaces with the kernel to perform operations like file management, networking, and device interaction.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Relationship-Between-Layers"><a href="#Relationship-Between-Layers" class="headerlink" title="Relationship Between Layers"></a>Relationship Between Layers</h2><ul>
+<li><strong>Communication</strong>: The application layer communicates with the kernel through system calls. When an application needs to perform a task that involves hardware (e.g., reading a file or sending data over a network), it makes a system call to request the kernel’s assistance.</li>
+<li><strong>Abstraction</strong>: The kernel abstracts the complexities of hardware management from the application layer, allowing developers to create software without needing to manage hardware directly.</li>
+<li><strong>Security and Stability</strong>: The kernel provides a layer of protection and control to ensure that applications cannot directly access or interfere with hardware resources, enhancing the system’s security and stability.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/kernel/" data-id="cm2aoyzeu0004itq7503ieing" data-title="Kernel Operating Systems" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/15/threading/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.827Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/15/threading/">Threading</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Threading</strong> allows a single process to perform multiple tasks simultaneously using separate threads.</p>
+<ul>
+<li><p><strong>Benefits</strong>:</p>
+<ul>
+<li><strong>Improved Performance</strong>: By running multiple threads in parallel, applications can complete tasks more quickly, making better use of available CPU resources.</li>
+<li><strong>Responsiveness</strong>: Threads can handle multiple operations at once, improving the responsiveness of applications, especially in interactive or real-time systems.</li>
+</ul>
+</li>
+<li><p><strong>How It Works</strong>:</p>
+<ul>
+<li><strong>Shared Memory</strong>: Threads within the same process share the same memory space, allowing them to access and modify shared data. This facilitates communication between threads but also requires careful management.</li>
+<li><strong>Thread Management</strong>: Proper management is needed to avoid conflicts such as race conditions (where threads access shared data simultaneously) and deadlocks (where threads wait indefinitely for resources held by each other). Techniques like synchronization mechanisms (e.g., mutexes, semaphores) are used to manage access to shared resources and ensure thread safety.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/threading/" data-id="cm2aoyzev0005itq74t06hbgj" data-title="Threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-scaling" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/15/scaling/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.827Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/15/scaling/">Scaling: Horizontal vs. Vertical</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/is373_project/images/scaling.png" alt="Scaling"></p>
+<h2 id="Vertical-Scaling"><a href="#Vertical-Scaling" class="headerlink" title="Vertical Scaling"></a>Vertical Scaling</h2><p><strong>Definition</strong>: Vertical scaling involves adding more power to a single machine, such as increasing CPU, RAM, or storage capacity.</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Simplicity</strong>: Easier to implement as it involves upgrading the existing machine without requiring changes to the application.</li>
+<li><strong>No App Changes</strong>: Existing applications generally do not need modifications to benefit from increased resources.</li>
+</ul>
+<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Capacity Limitations</strong>: Limited by the maximum capacity of the machine. There’s a physical limit to how much power a single machine can handle.</li>
+<li><strong>Cost</strong>: Upgrading hardware can be expensive, especially for high-end components.</li>
+<li><strong>Single Point of Failure</strong>: If the machine fails, the entire application or service can become unavailable.</li>
+</ul>
+<h2 id="Horizontal-Scaling"><a href="#Horizontal-Scaling" class="headerlink" title="Horizontal Scaling"></a>Horizontal Scaling</h2><p><strong>Definition</strong>: Horizontal scaling involves adding more machines to distribute the load and increase capacity.</p>
+<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Fault Tolerance</strong>: Enhanced reliability and fault tolerance since the application is distributed across multiple machines. Failure of one machine does not bring down the entire system.</li>
+<li><strong>Traffic Handling</strong>: Better suited for handling increased traffic and load by distributing the workload among several machines.</li>
+<li><strong>Scalability</strong>: Easier to scale out by adding more machines as needed.</li>
+</ul>
+<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Complexity</strong>: More complex to implement and manage. Requires designing the application to work in a distributed environment.</li>
+<li><strong>Distributed App Design</strong>: Needs changes to the application architecture, such as implementing load balancing, distributed databases, and network configurations.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/scaling/" data-id="cm2aoyzev0006itq70386de3a" data-title="Scaling: Horizontal vs. Vertical" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/15/ubuntu/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.827Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/15/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/is373_project/images/ubuntuformac.jpg" alt="Ubuntu for mac screenshot"></p>
+<p><strong>Ubuntu</strong> is an open-source operating system popular for development. Installing it on a Mac allows you to dual-boot or switch between macOS and Ubuntu, enhancing flexibility for development work.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
+<li>A Mac with macOS</li>
+<li><strong>USB drive (8GB+)</strong></li>
+<li><strong>Ubuntu ISO</strong> from <a target="_blank" rel="noopener" href="https://ubuntu.com/download/desktop">here</a></li>
+<li><strong>Balena Etcher</strong> for creating a bootable USB</li>
+</ul>
+<h2 id="Installation-Steps"><a href="#Installation-Steps" class="headerlink" title="Installation Steps"></a>Installation Steps</h2><h3 id="1-Create-a-Bootable-USB"><a href="#1-Create-a-Bootable-USB" class="headerlink" title="1. Create a Bootable USB"></a>1. Create a Bootable USB</h3><ol>
+<li>Download the <strong>Ubuntu ISO</strong>.</li>
+<li>Use <strong>Balena Etcher</strong> to flash the ISO to a USB drive.</li>
+</ol>
+<h3 id="2-Partition-Mac-Drive"><a href="#2-Partition-Mac-Drive" class="headerlink" title="2. Partition Mac Drive"></a>2. Partition Mac Drive</h3><ol>
+<li>Open <strong>Disk Utility</strong>.</li>
+<li>Create a new partition (20 GB+) in <strong>MS-DOS (FAT)</strong> format.</li>
+</ol>
+<h3 id="3-Boot-from-USB"><a href="#3-Boot-from-USB" class="headerlink" title="3. Boot from USB"></a>3. Boot from USB</h3><ol>
+<li>Restart the Mac and hold <strong>Option (⌥)</strong> key during boot.</li>
+<li>Select the USB drive from the boot menu.</li>
+</ol>
+<h3 id="4-Install-Ubuntu"><a href="#4-Install-Ubuntu" class="headerlink" title="4. Install Ubuntu"></a>4. Install Ubuntu</h3><ol>
+<li>Choose <strong>Try Ubuntu</strong> from the USB boot.</li>
+<li>Select <strong>Install Ubuntu</strong> and follow the prompts.</li>
+<li>Install Ubuntu on the new partition.</li>
+</ol>
+<h3 id="5-Dual-Boot-Setup"><a href="#5-Dual-Boot-Setup" class="headerlink" title="5. Dual Boot Setup"></a>5. Dual Boot Setup</h3><ol>
+<li>After installation, hold <strong>Option (⌥)</strong> on restart to choose between macOS and Ubuntu.</li>
+</ol>
+<p>For easier dual-booting, consider installing <strong>rEFInd</strong> from <a target="_blank" rel="noopener" href="https://www.rodsbooks.com/refind/">here</a>.</p>
+<h2 id="Post-Installation"><a href="#Post-Installation" class="headerlink" title="Post-Installation"></a>Post-Installation</h2><ul>
+<li>Run system updates:<pre><code class="bash">sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/ubuntu/" data-id="cm2aoyzew0007itq7hy7qhj0v" data-title="Install Ubuntu on a Mac: A Quick Guide" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-virtualizationvscontainerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/15/virtualizationvscontainerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.827Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/15/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/is373_project/images/virtualvscontainer.webp" alt="Diagram"></p>
+<p><strong>Virtualization</strong> and <strong>Containerization</strong> are both technologies used to run isolated applications on a single system. However, they differ in how they achieve isolation and resource utilization. Understanding the benefits and drawbacks of each can help determine the best approach for your infrastructure needs.</p>
+<h2 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h2><p><strong>Virtualization</strong> involves creating virtual machines (VMs), where each VM runs its own operating system on top of a hypervisor. A hypervisor is the software that enables multiple VMs to share the same physical hardware. Each VM includes a full copy of an operating system (OS), applications, and necessary libraries.</p>
+<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Full Isolation</strong>: VMs provide complete isolation between environments. Each VM has its own OS, making them secure and preventing one VM from affecting others.</li>
+<li><strong>Flexibility</strong>: VMs can run different operating systems on the same physical hardware. This allows running Linux, Windows, and other OSes simultaneously.</li>
+<li><strong>Resource Management</strong>: Hypervisors allow for the allocation of specific resources (CPU, memory, storage) to each VM, ensuring control over how much each VM consumes.</li>
+<li><strong>Mature Technology</strong>: Virtualization has been around for decades and has well-established tools, best practices, and enterprise-grade support (e.g., VMware, Hyper-V).</li>
+</ul>
+<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Heavy Resource Usage</strong>: Each VM includes a full OS, which takes up significant CPU, memory, and storage resources. This can lead to overhead, especially when running multiple VMs.</li>
+<li><strong>Slower Performance</strong>: Due to the additional layer of the OS and hypervisor, VMs tend to be slower compared to containerized applications.</li>
+<li><strong>Longer Boot Times</strong>: Since VMs run a complete OS, they take longer to boot and initialize compared to containers, which are more lightweight.</li>
+</ul>
+<h2 id="Containerization"><a href="#Containerization" class="headerlink" title="Containerization"></a>Containerization</h2><p><strong>Containerization</strong> involves packaging applications and their dependencies into containers, which share the host system’s kernel but run in isolated user spaces. Containers are managed using container engines such as <strong>Docker</strong> or orchestration tools like <strong>Kubernetes</strong>.</p>
+<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
+<li><strong>Lightweight</strong>: Containers share the host OS kernel, meaning they do not need to run a full OS. This makes them much more efficient in terms of resource usage (CPU, memory, and storage).</li>
+<li><strong>Faster Startup</strong>: Containers can start up in seconds because they don’t need to boot an entire OS, which accelerates development and testing processes.</li>
+<li><strong>Portability</strong>: Containers can run on any system that supports the container engine (e.g., Docker), regardless of the underlying infrastructure, ensuring consistency across environments (development, staging, production).</li>
+<li><strong>Scalability</strong>: Containerization, especially when combined with orchestration platforms like Kubernetes, makes it easy to scale applications dynamically to meet demand.</li>
+</ul>
+<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
+<li><strong>Shared Kernel</strong>: Containers share the host OS kernel, meaning that any vulnerability in the kernel can potentially affect all containers running on the host, making them less isolated compared to VMs.</li>
+<li><strong>Limited OS Diversity</strong>: Since containers share the host kernel, you cannot run a container with a different OS (e.g., you can’t run a Windows container on a Linux host without specific configurations).</li>
+<li><strong>Less Mature</strong>: While containerization is gaining widespread adoption, it’s a newer technology compared to virtualization, and some legacy applications may not be easily containerized.</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In summary, <strong>Virtualization</strong> offers strong isolation and the flexibility to run multiple OSes but comes with higher resource overhead and slower performance. It’s ideal for situations where you need complete OS-level isolation and security, or when running applications that aren’t designed to be containerized.</p>
+<p>On the other hand, <strong>Containerization</strong> provides a more efficient, faster, and portable solution, making it excellent for microservices, development environments, and cloud-native applications. However, it sacrifices some of the isolation and flexibility that VMs provide. The best choice depends on your project’s needs, resource constraints, and operational goals.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/virtualizationvscontainerization/" data-id="cm2aoyzew0008itq700951381" data-title="Virtualization vs Containerization: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-12-factor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/is373_project/2024/10/15/12-factor/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.826Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/is373_project/2024/10/15/12-factor/">Twelve Factor App</a>
     </h1>
   
 
@@ -114,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/12-factor/" data-id="cm29dldrw0000m3qcbjx4fp05" data-title="Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/12-factor/" data-id="cm2aoyzen0000itq7d3dieqit" data-title="Twelve Factor App" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -128,8 +442,8 @@
   
     <article id="post-containerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/14/containerization/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
+    <a href="/is373_project/2024/10/15/containerization/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.826Z" itemprop="datePublished">2024-10-15</time>
 </a>
     
   </div>
@@ -140,7 +454,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/containerization/">Containerization</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/15/containerization/">Containerization</a>
     </h1>
   
 
@@ -172,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/containerization/" data-id="cm29dlds00001m3qcgpqy0qas" data-title="Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/containerization/" data-id="cm2aoyzer0001itq78gmb02c9" data-title="Containerization" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -186,8 +500,8 @@
   
     <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/14/docker/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
+    <a href="/is373_project/2024/10/15/docker/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.826Z" itemprop="datePublished">2024-10-15</time>
 </a>
     
   </div>
@@ -198,7 +512,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/docker/">Docker</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/15/docker/">Docker</a>
     </h1>
   
 
@@ -269,7 +583,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/docker/" data-id="cm29dlds10002m3qc6fi8200g" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/docker/" data-id="cm2aoyzet0002itq781trdt4g" data-title="Docker" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -283,8 +597,8 @@
   
     <article id="post-dockervskubernetes" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/is373_project/2024/10/14/dockervskubernetes/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
+    <a href="/is373_project/2024/10/15/dockervskubernetes/" class="article-date">
+  <time class="dt-published" datetime="2024-10-15T17:02:46.826Z" itemprop="datePublished">2024-10-15</time>
 </a>
     
   </div>
@@ -295,7 +609,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
+      <a class="p-name article-title" href="/is373_project/2024/10/15/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
     </h1>
   
 
@@ -334,321 +648,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/dockervskubernetes/" data-id="cm29dlds20003m3qcckvweelk" data-title="Docker vs Kubernetes: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-kernel" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/14/kernel/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/kernel/">Kernel Operating Systems</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/is373_project/images/Kernel_Layout.svg.png" alt="Kernel OS Diagram"></p>
-<h2 id="Kernel-Layer"><a href="#Kernel-Layer" class="headerlink" title="Kernel Layer"></a>Kernel Layer</h2><ul>
-<li><strong>Definition</strong>: The kernel is the core component of an operating system (OS). It manages the system’s hardware resources and enables software applications to interact with hardware components.</li>
-<li><strong>Key Functions</strong>:<ul>
-<li><strong>Resource Management</strong>: Allocates CPU time, memory space, and I&#x2F;O resources to various processes and applications.</li>
-<li><strong>Process Management</strong>: Handles the creation, scheduling, and termination of processes. It ensures that processes run efficiently and without interference.</li>
-<li><strong>Memory Management</strong>: Manages the system’s memory, including RAM and virtual memory, to ensure that processes have the necessary memory resources and to optimize performance.</li>
-<li><strong>Device Management</strong>: Acts as an intermediary between applications and hardware devices such as printers, disk drives, and network interfaces.</li>
-<li><strong>System Calls</strong>: Provides an interface for applications to request services from the kernel, such as file operations or process control.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Application-Layer"><a href="#Application-Layer" class="headerlink" title="Application Layer"></a>Application Layer</h2><ul>
-<li><strong>Definition</strong>: The application layer consists of the software applications that users interact with. These applications rely on the kernel to perform low-level tasks and manage hardware resources.</li>
-<li><strong>Key Functions</strong>:<ul>
-<li><strong>User Interaction</strong>: Provides the interface through which users interact with the computer, including graphical user interfaces (GUIs) and command-line interfaces.</li>
-<li><strong>Application Execution</strong>: Runs user-facing programs, such as web browsers, word processors, and games, which utilize the services provided by the kernel.</li>
-<li><strong>Communication</strong>: Interfaces with the kernel to perform operations like file management, networking, and device interaction.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Relationship-Between-Layers"><a href="#Relationship-Between-Layers" class="headerlink" title="Relationship Between Layers"></a>Relationship Between Layers</h2><ul>
-<li><strong>Communication</strong>: The application layer communicates with the kernel through system calls. When an application needs to perform a task that involves hardware (e.g., reading a file or sending data over a network), it makes a system call to request the kernel’s assistance.</li>
-<li><strong>Abstraction</strong>: The kernel abstracts the complexities of hardware management from the application layer, allowing developers to create software without needing to manage hardware directly.</li>
-<li><strong>Security and Stability</strong>: The kernel provides a layer of protection and control to ensure that applications cannot directly access or interfere with hardware resources, enhancing the system’s security and stability.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/kernel/" data-id="cm29dlds30004m3qcdws954ro" data-title="Kernel Operating Systems" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-threading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/14/threading/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/threading/">Threading</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>Threading</strong> allows a single process to perform multiple tasks simultaneously using separate threads.</p>
-<ul>
-<li><p><strong>Benefits</strong>:</p>
-<ul>
-<li><strong>Improved Performance</strong>: By running multiple threads in parallel, applications can complete tasks more quickly, making better use of available CPU resources.</li>
-<li><strong>Responsiveness</strong>: Threads can handle multiple operations at once, improving the responsiveness of applications, especially in interactive or real-time systems.</li>
-</ul>
-</li>
-<li><p><strong>How It Works</strong>:</p>
-<ul>
-<li><strong>Shared Memory</strong>: Threads within the same process share the same memory space, allowing them to access and modify shared data. This facilitates communication between threads but also requires careful management.</li>
-<li><strong>Thread Management</strong>: Proper management is needed to avoid conflicts such as race conditions (where threads access shared data simultaneously) and deadlocks (where threads wait indefinitely for resources held by each other). Techniques like synchronization mechanisms (e.g., mutexes, semaphores) are used to manage access to shared resources and ensure thread safety.</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/threading/" data-id="cm29dlds30005m3qc5w0k514u" data-title="Threading" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-scaling" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/14/scaling/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/scaling/">Scaling: Horizontal vs. Vertical</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/is373_project/images/scaling.png" alt="Scaling"></p>
-<h2 id="Vertical-Scaling"><a href="#Vertical-Scaling" class="headerlink" title="Vertical Scaling"></a>Vertical Scaling</h2><p><strong>Definition</strong>: Vertical scaling involves adding more power to a single machine, such as increasing CPU, RAM, or storage capacity.</p>
-<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Simplicity</strong>: Easier to implement as it involves upgrading the existing machine without requiring changes to the application.</li>
-<li><strong>No App Changes</strong>: Existing applications generally do not need modifications to benefit from increased resources.</li>
-</ul>
-<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Capacity Limitations</strong>: Limited by the maximum capacity of the machine. There’s a physical limit to how much power a single machine can handle.</li>
-<li><strong>Cost</strong>: Upgrading hardware can be expensive, especially for high-end components.</li>
-<li><strong>Single Point of Failure</strong>: If the machine fails, the entire application or service can become unavailable.</li>
-</ul>
-<h2 id="Horizontal-Scaling"><a href="#Horizontal-Scaling" class="headerlink" title="Horizontal Scaling"></a>Horizontal Scaling</h2><p><strong>Definition</strong>: Horizontal scaling involves adding more machines to distribute the load and increase capacity.</p>
-<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Fault Tolerance</strong>: Enhanced reliability and fault tolerance since the application is distributed across multiple machines. Failure of one machine does not bring down the entire system.</li>
-<li><strong>Traffic Handling</strong>: Better suited for handling increased traffic and load by distributing the workload among several machines.</li>
-<li><strong>Scalability</strong>: Easier to scale out by adding more machines as needed.</li>
-</ul>
-<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Complexity</strong>: More complex to implement and manage. Requires designing the application to work in a distributed environment.</li>
-<li><strong>Distributed App Design</strong>: Needs changes to the application architecture, such as implementing load balancing, distributed databases, and network configurations.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/scaling/" data-id="cm29dlds40006m3qcdpau47ls" data-title="Scaling: Horizontal vs. Vertical" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ubuntu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/14/ubuntu/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/is373_project/images/ubuntuformac.jpg" alt="Ubuntu for mac screenshot"></p>
-<p><strong>Ubuntu</strong> is an open-source operating system popular for development. Installing it on a Mac allows you to dual-boot or switch between macOS and Ubuntu, enhancing flexibility for development work.</p>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><ul>
-<li>A Mac with macOS</li>
-<li><strong>USB drive (8GB+)</strong></li>
-<li><strong>Ubuntu ISO</strong> from <a target="_blank" rel="noopener" href="https://ubuntu.com/download/desktop">here</a></li>
-<li><strong>Balena Etcher</strong> for creating a bootable USB</li>
-</ul>
-<h2 id="Installation-Steps"><a href="#Installation-Steps" class="headerlink" title="Installation Steps"></a>Installation Steps</h2><h3 id="1-Create-a-Bootable-USB"><a href="#1-Create-a-Bootable-USB" class="headerlink" title="1. Create a Bootable USB"></a>1. Create a Bootable USB</h3><ol>
-<li>Download the <strong>Ubuntu ISO</strong>.</li>
-<li>Use <strong>Balena Etcher</strong> to flash the ISO to a USB drive.</li>
-</ol>
-<h3 id="2-Partition-Mac-Drive"><a href="#2-Partition-Mac-Drive" class="headerlink" title="2. Partition Mac Drive"></a>2. Partition Mac Drive</h3><ol>
-<li>Open <strong>Disk Utility</strong>.</li>
-<li>Create a new partition (20 GB+) in <strong>MS-DOS (FAT)</strong> format.</li>
-</ol>
-<h3 id="3-Boot-from-USB"><a href="#3-Boot-from-USB" class="headerlink" title="3. Boot from USB"></a>3. Boot from USB</h3><ol>
-<li>Restart the Mac and hold <strong>Option (⌥)</strong> key during boot.</li>
-<li>Select the USB drive from the boot menu.</li>
-</ol>
-<h3 id="4-Install-Ubuntu"><a href="#4-Install-Ubuntu" class="headerlink" title="4. Install Ubuntu"></a>4. Install Ubuntu</h3><ol>
-<li>Choose <strong>Try Ubuntu</strong> from the USB boot.</li>
-<li>Select <strong>Install Ubuntu</strong> and follow the prompts.</li>
-<li>Install Ubuntu on the new partition.</li>
-</ol>
-<h3 id="5-Dual-Boot-Setup"><a href="#5-Dual-Boot-Setup" class="headerlink" title="5. Dual Boot Setup"></a>5. Dual Boot Setup</h3><ol>
-<li>After installation, hold <strong>Option (⌥)</strong> on restart to choose between macOS and Ubuntu.</li>
-</ol>
-<p>For easier dual-booting, consider installing <strong>rEFInd</strong> from <a target="_blank" rel="noopener" href="https://www.rodsbooks.com/refind/">here</a>.</p>
-<h2 id="Post-Installation"><a href="#Post-Installation" class="headerlink" title="Post-Installation"></a>Post-Installation</h2><ul>
-<li>Run system updates:<pre><code class="bash">sudo apt update &amp;&amp; sudo apt upgrade
-</code></pre>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/ubuntu/" data-id="cm29dlds40007m3qcea8jccrp" data-title="Install Ubuntu on a Mac: A Quick Guide" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-virtualizationvscontainerization" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/is373_project/2024/10/14/virtualizationvscontainerization/" class="article-date">
-  <time class="dt-published" datetime="2024-10-14T18:56:31.212Z" itemprop="datePublished">2024-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/is373_project/2024/10/14/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/is373_project/images/virtualvscontainer.webp" alt="Diagram"></p>
-<p><strong>Virtualization</strong> and <strong>Containerization</strong> are both technologies used to run isolated applications on a single system. However, they differ in how they achieve isolation and resource utilization. Understanding the benefits and drawbacks of each can help determine the best approach for your infrastructure needs.</p>
-<h2 id="Virtualization"><a href="#Virtualization" class="headerlink" title="Virtualization"></a>Virtualization</h2><p><strong>Virtualization</strong> involves creating virtual machines (VMs), where each VM runs its own operating system on top of a hypervisor. A hypervisor is the software that enables multiple VMs to share the same physical hardware. Each VM includes a full copy of an operating system (OS), applications, and necessary libraries.</p>
-<h3 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Full Isolation</strong>: VMs provide complete isolation between environments. Each VM has its own OS, making them secure and preventing one VM from affecting others.</li>
-<li><strong>Flexibility</strong>: VMs can run different operating systems on the same physical hardware. This allows running Linux, Windows, and other OSes simultaneously.</li>
-<li><strong>Resource Management</strong>: Hypervisors allow for the allocation of specific resources (CPU, memory, storage) to each VM, ensuring control over how much each VM consumes.</li>
-<li><strong>Mature Technology</strong>: Virtualization has been around for decades and has well-established tools, best practices, and enterprise-grade support (e.g., VMware, Hyper-V).</li>
-</ul>
-<h3 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Heavy Resource Usage</strong>: Each VM includes a full OS, which takes up significant CPU, memory, and storage resources. This can lead to overhead, especially when running multiple VMs.</li>
-<li><strong>Slower Performance</strong>: Due to the additional layer of the OS and hypervisor, VMs tend to be slower compared to containerized applications.</li>
-<li><strong>Longer Boot Times</strong>: Since VMs run a complete OS, they take longer to boot and initialize compared to containers, which are more lightweight.</li>
-</ul>
-<h2 id="Containerization"><a href="#Containerization" class="headerlink" title="Containerization"></a>Containerization</h2><p><strong>Containerization</strong> involves packaging applications and their dependencies into containers, which share the host system’s kernel but run in isolated user spaces. Containers are managed using container engines such as <strong>Docker</strong> or orchestration tools like <strong>Kubernetes</strong>.</p>
-<h3 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h3><ul>
-<li><strong>Lightweight</strong>: Containers share the host OS kernel, meaning they do not need to run a full OS. This makes them much more efficient in terms of resource usage (CPU, memory, and storage).</li>
-<li><strong>Faster Startup</strong>: Containers can start up in seconds because they don’t need to boot an entire OS, which accelerates development and testing processes.</li>
-<li><strong>Portability</strong>: Containers can run on any system that supports the container engine (e.g., Docker), regardless of the underlying infrastructure, ensuring consistency across environments (development, staging, production).</li>
-<li><strong>Scalability</strong>: Containerization, especially when combined with orchestration platforms like Kubernetes, makes it easy to scale applications dynamically to meet demand.</li>
-</ul>
-<h3 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h3><ul>
-<li><strong>Shared Kernel</strong>: Containers share the host OS kernel, meaning that any vulnerability in the kernel can potentially affect all containers running on the host, making them less isolated compared to VMs.</li>
-<li><strong>Limited OS Diversity</strong>: Since containers share the host kernel, you cannot run a container with a different OS (e.g., you can’t run a Windows container on a Linux host without specific configurations).</li>
-<li><strong>Less Mature</strong>: While containerization is gaining widespread adoption, it’s a newer technology compared to virtualization, and some legacy applications may not be easily containerized.</li>
-</ul>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In summary, <strong>Virtualization</strong> offers strong isolation and the flexibility to run multiple OSes but comes with higher resource overhead and slower performance. It’s ideal for situations where you need complete OS-level isolation and security, or when running applications that aren’t designed to be containerized.</p>
-<p>On the other hand, <strong>Containerization</strong> provides a more efficient, faster, and portable solution, making it excellent for microservices, development environments, and cloud-native applications. However, it sacrifices some of the isolation and flexibility that VMs provide. The best choice depends on your project’s needs, resource constraints, and operational goals.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kl63.github.io/is373_project/2024/10/14/virtualizationvscontainerization/" data-id="cm29dlds50008m3qcajhl0ft7" data-title="Virtualization vs Containerization: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://kl63.github.io/is373_project/2024/10/15/dockervskubernetes/" data-id="cm2aoyzet0003itq75gkh3q5x" data-title="Docker vs Kubernetes: Pros and Cons" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -691,23 +691,23 @@
       <ul>
         
           <li>
-            <a href="/is373_project/2024/10/14/12-factor/">Twelve Factor App</a>
+            <a href="/is373_project/2024/10/15/kernel/">Kernel Operating Systems</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/14/containerization/">Containerization</a>
+            <a href="/is373_project/2024/10/15/threading/">Threading</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/14/docker/">Docker</a>
+            <a href="/is373_project/2024/10/15/scaling/">Scaling: Horizontal vs. Vertical</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/14/dockervskubernetes/">Docker vs Kubernetes: Pros and Cons</a>
+            <a href="/is373_project/2024/10/15/ubuntu/">Install Ubuntu on a Mac: A Quick Guide</a>
           </li>
         
           <li>
-            <a href="/is373_project/2024/10/14/kernel/">Kernel Operating Systems</a>
+            <a href="/is373_project/2024/10/15/virtualizationvscontainerization/">Virtualization vs Containerization: Pros and Cons</a>
           </li>
         
       </ul>
